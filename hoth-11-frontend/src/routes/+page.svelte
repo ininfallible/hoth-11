@@ -1,6 +1,5 @@
-
 <script>
-    import {major, formData,} from './stores.js';
+    import {major, formData } from './stores.js';
     var mbti1 = "";
     var mbti2 = "";
     var mbti3 = "";
@@ -23,7 +22,7 @@
     }
 </script>
 
-<h1>What’s your major (ie. computer science)?</h1>
+<h1>What’s your major (eg. computer science)?</h1>
 <input bind:value = {$major} />
 
 <h2>Are you more introverted or extroverted?</h2>
@@ -92,6 +91,9 @@
 
 <button on:click={onFormSubmit}>Submit</button>
 
+
+
+<!-- <button on:click={onFormSubmit}/> -->
 
 
 <style>
