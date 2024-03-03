@@ -1,2 +1,70 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+
+<script>
+    import {name, greeting} from './stores.js';
+    let scoops = 1;
+	let flavours = [];
+
+	const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
+</script>
+
+<h1>{$greeting}</h1>
+<input bind:value = {$name} />
+<button on:click={() => $name += '!'}>
+    Add an exclamation mark!
+</button>
+
+<h2>Size</h2>
+
+{#each [1, 2, 3] as number}
+	<label>
+		<input
+			type="radio"
+			name="scoops"
+			value={number}
+			bind:group={scoops}
+		/>
+
+		{number} {number === 1 ? 'scoop' : 'scoops'}
+	</label>
+{/each}
+
+<h2>Flavours</h2>
+
+{#each ['cookies and cream', 'mint choc chip', 'raspberry ripple'] as flavour}
+	<label>
+		<input
+			type="checkbox"
+			name="flavours"
+			value={flavour}
+			bind:group={flavours}
+		/>
+
+		{flavour}
+	</label>
+{/each}
+
+{#if flavours.length === 0}
+	<p>Please select at least one flavour</p>
+{:else if flavours.length > scoops}
+	<p>Can't order more flavours than scoops!</p>
+{:else}
+	<p>
+		You ordered {scoops} {scoops === 1 ? 'scoop' : 'scoops'}
+		of {formatter.format(flavours)}
+	</p>
+{/if}
+
+<style>
+    label{
+        font-family: 'Arial';
+    }
+    h1{
+        font-family: 'Arial';
+    }
+    h2{
+        font-family: 'Arial';
+    }
+    p{
+        font-family: 'Arial';
+    }
+</style>
