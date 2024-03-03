@@ -1,58 +1,72 @@
 
 <script>
-    import {name, greeting} from './stores.js';
-    let scoops = 1;
-	let flavours = [];
+    import {major} from './stores.js';
+    let mbti1 = [];
+    let mbti2 = [];
+    let mbti3 = [];
+    let mbti4 = [];
 
 	const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
 </script>
 
-<h1>{$greeting}</h1>
-<input bind:value = {$name} />
-<button on:click={() => $name += '!'}>
-    Add an exclamation mark!
-</button>
+<h1>What’s your major (ie. computer science)?</h1>
+<input bind:value = {$major} />
 
-<h2>Size</h2>
+<h2>Are you more introverted or extroverted?</h2>
 
-{#each [1, 2, 3] as number}
+{#each ['introverted' , 'extroverted'] as mbti1}
 	<label>
 		<input
 			type="radio"
-			name="scoops"
-			value={number}
-			bind:group={scoops}
+			name="mbti1"
+			value={mbti1}
+			bind:group={mbti1}
 		/>
-
-		{number} {number === 1 ? 'scoop' : 'scoops'}
+        {mbti1}  
 	</label>
 {/each}
 
-<h2>Flavours</h2>
+<h2>Do you tend to focus more on what’s in front of you or on what the future might hold?</h2>
 
-{#each ['cookies and cream', 'mint choc chip', 'raspberry ripple'] as flavour}
+{#each ['what’s right in front of me', 'what the future might hold'] as mbti2}
 	<label>
 		<input
-			type="checkbox"
-			name="flavours"
-			value={flavour}
-			bind:group={flavours}
+			type="radio"
+			name="mbti2"
+			value={mbti2}
+			bind:group={mbti2}
 		/>
-
-		{flavour}
+		{mbti2}
 	</label>
 {/each}
 
-{#if flavours.length === 0}
-	<p>Please select at least one flavour</p>
-{:else if flavours.length > scoops}
-	<p>Can't order more flavours than scoops!</p>
-{:else}
-	<p>
-		You ordered {scoops} {scoops === 1 ? 'scoop' : 'scoops'}
-		of {formatter.format(flavours)}
-	</p>
-{/if}
+<h2>Are you more guided by your feelings or by logic?</h2>
+
+{#each ['feelings', 'logic'] as mbti3}
+	<label>
+		<input
+			type="radio"
+			name="mbti3"
+			value={mbti3}
+			bind:group={mbti3}
+		/>
+		{mbti3}
+	</label>
+{/each}
+
+<h2>Do you prefer planning things out or just going with the flow?</h2>
+
+{#each ['planning things out', 'just going with the flow'] as mbti4}
+	<label>
+		<input
+			type="radio"
+			name="mbti4"
+			value={mbti4}
+			bind:group={mbti4}
+		/>
+		{mbti4}
+	</label>
+{/each}
 
 <style>
     label{
@@ -62,9 +76,6 @@
         font-family: 'Arial';
     }
     h2{
-        font-family: 'Arial';
-    }
-    p{
         font-family: 'Arial';
     }
 </style>

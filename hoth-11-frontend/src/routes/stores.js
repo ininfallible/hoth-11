@@ -1,4 +1,3 @@
-import {writable, derived} from 'svelte/store'
+import {writable} from 'svelte/store'
 
-export const name = writable('world');
-export const greeting = derived (name, ($name)=> `Hello ${$name}!`);
+export const major = writable('');
