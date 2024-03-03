@@ -23,8 +23,6 @@
     }
 </script>
 
-<button on:click={onFormSubmit}>Submit</button>
-
 <h1>What’s your major (ie. computer science)?</h1>
 <input bind:value = {$major} />
 
@@ -91,6 +89,8 @@
 	</label>
 {/each}
 </form>
+
+<button on:click={onFormSubmit}>Submit</button>
 
 
 
