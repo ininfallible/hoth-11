@@ -87,7 +87,7 @@
 
 
 <div style:background-color = {$background}>
-<div style:height="100vh">
+<div style:height="100%">
 <div style:line-height="40px">
 
 	<h1>
@@ -166,6 +166,7 @@
 {/each}
 </form>
 
+<br>
 <h2>On a scale from 1-5, how difficult do you think your major is?</h2>
 
 <form method="POST">
@@ -182,6 +183,7 @@
 {/each}
 </form>
 
+<br>
 <h2>On a scale from 1-5, how much do you like your major?</h2>
 
 <form method="POST">
@@ -198,6 +200,7 @@
 {/each}
 </form>
 
+<br>
 <h2>How  often are you in your dorm (percentage)?</h2>
 
 <form method="POST">
@@ -214,6 +217,7 @@
 {/each}
 </form>
 
+<br>
 <h2>What is your most used social media app?</h2>
 
 <form method="POST">
@@ -230,6 +234,7 @@
 {/each}
 </form>
 
+<br>
 <h2>On a scale from 1-5, how in tune with Internet culture would you say you are?</h2>
 
 <form method="POST">
@@ -246,6 +251,7 @@
 {/each}
 </form>
 
+<br>
 <h2>Are you more of a cat person or a dog person?</h2>
 
 <form method="POST">
@@ -262,6 +268,7 @@
 {/each}
 </form>
 
+<br>
 <h2>What is your favorite music genre?</h2>
 
 <form method="POST">
@@ -278,6 +285,7 @@
 {/each}
 </form>
 
+<br>
 <h2>How often do you shower?</h2>
 
 <form method="POST">
@@ -294,6 +302,7 @@
 {/each}
 </form>
 
+<br>
 <h2>What is your favorite place to eat on the Hill?</h2>
 
 <form method="POST">
@@ -310,6 +319,7 @@
 {/each}
 </form>
 
+<br>
 <h2>What is your favorite form of caffeine?</h2>
 
 <form method="POST">
@@ -326,6 +336,7 @@
 {/each}
 </form>
 
+<br>
 <h2>What is your typing speed?</h2>
 
 <form method="POST">
