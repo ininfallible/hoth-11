@@ -85,8 +85,7 @@
 		<input
 			type="radio"
 			name="mbti1"
-			value={mbti1}
-			bind:group={mbti1}
+			bind:value={mbti1}
 		/>
         {mbti1}  
 	</label>
@@ -102,8 +101,7 @@
 		<input
 			type="radio"
 			name="mbti2"
-			value={mbti2}
-			bind:group={mbti2}
+			bind:value={mbti2}
 		/>
 		{mbti2}
 	</label>
@@ -119,8 +117,7 @@
 		<input
 			type="radio"
 			name="mbti3"
-			value={mbti3}
-			bind:group={mbti3}
+			bind:value={mbti3}
 		/>
 		{mbti3}
 	</label>
@@ -136,8 +133,7 @@
 		<input
 			type="radio"
 			name="mbti4"
-			value={mbti4}
-			bind:group={mbti4}
+			bind:value={mbti4}
 		/>
 		{mbti4}
 	</label>
