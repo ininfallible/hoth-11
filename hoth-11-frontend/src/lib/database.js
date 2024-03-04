@@ -4,7 +4,11 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getDatabase, ref, set } from "firebase/database";
 
-// TODO: Add SDKs for Firebase products that you want to use
+
+
+  if (typeof window !== 'undefined')
+  {
+    // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -24,15 +28,8 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const database = getDatabase(app);
 
-function writeUserData(userId, q1, q2, q3, q4, q5, q6, q7) {
+function writeUserData(userId, data) {
     const db = getDatabase();
-    set(ref(db, 'users/' + userId), {
-      question_1: q1,
-      question_2: q2,
-      question_3: q3,
-      question_4:q4,
-      question_5:q5,
-      question_6:q6,
-      question_7:q7
-    });
+    set(ref(db, 'users/' + userId), data);
+  }
   }

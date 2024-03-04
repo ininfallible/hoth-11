@@ -22,7 +22,7 @@
     }
 </script>
 
-<h1>What’s your major (eg. computer science)?</h1>
+<h2>What’s your major (type the full major name out in all lowercase ie. computer science)?</h2>
 <input bind:value = {$major} />
 
 <h2>Are you more introverted or extroverted?</h2>
