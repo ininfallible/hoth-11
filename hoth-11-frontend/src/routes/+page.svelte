@@ -379,17 +379,7 @@
         font-family: 'Comic Sans MS', 'Comic Sans';
     }
 
-<<<<<<< Updated upstream
-    h1{
-        font-family: 'Comic Sans MS', 'Comic Sans';
-    }
-=======
->>>>>>> Stashed changes
-    h2{
-        font-family: 'Comic Sans MS', 'Comic Sans';
-		color: #263A68;
-    }
-
+ 
 	.button {
     display: inline-block;
     padding: 10px 20px;
