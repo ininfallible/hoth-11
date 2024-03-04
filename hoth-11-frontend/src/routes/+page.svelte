@@ -378,12 +378,14 @@
         /* background: transparent; */
     }
 	:global(body) {
+	border: 40px solid #DED8CC;
     color: #425B88;
 	margin: 0;
 	padding: 0;
 	text-align: center;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
+	box-sizing: border-box;
   	}
 	
     label{
