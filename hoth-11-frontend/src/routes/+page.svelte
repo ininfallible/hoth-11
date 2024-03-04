@@ -1,11 +1,11 @@
 <script>
-	// import { database } from "$lib/database.js";
     import { major, formData } from './stores.js';
 	import { get } from "svelte/store";
 	import { background } from './stores.js';
 
 	import { initializeApp } from "firebase/app";
 	import { collection, getFirestore, doc, setDoc } from "firebase/firestore";
+	import { query, where } from "firebase/firestore";
 
 	const firebaseConfig = {
 	apiKey: "AIzaSyDfECRJ5a6BRZS2ut9gCG061WinluJOHcI",
@@ -30,7 +30,6 @@
 
     async function onFormSubmit()
     {
-        console.log("submitting form to store");
 		console.log({
                 major: get(major),
                 mbti1: mbti1,
@@ -48,19 +47,14 @@
             }
         });
 
-		// const collectionRef = database.collection('formResults');
 		const collectionRef = collection(database, 'formResults');
 		try {
 			var stuff = get(formData);
-			console.log(stuff);
-			await setDoc(doc(database, "formResults", "ID"), stuff);
 
-			// const docRef = await collectionRef.set(stuff);
-			// console.log('Document written with ID: ', docRef.id);
-			// res.status(200).json({ success: true, message: 'Form data submitted successfully' });
+			let id = Math.floor(Math.random() * 1000000).toString();
+			await setDoc(doc(database, "formResults", id), stuff);
 		} catch (error) {
 			console.error('Error adding document: ', error);
-			// res.status(500).json({ success: false, message: 'Internal server error' });
 		}
     }
 
@@ -80,14 +74,15 @@
 <h2>Are you more introverted or extroverted?</h2>
 
 <form method="POST">
-{#each ['introverted' , 'extroverted'] as mbti1}
+{#each ['introverted' , 'extroverted'] as opt}
 	<label>
 		<input
 			type="radio"
-			name="mbti1"
-			bind:value={mbti1}
+			name={opt}
+			bind:group={mbti1}
+			value={opt}
 		/>
-        {mbti1}  
+        {opt}  
 	</label>
 {/each}
 </form>
