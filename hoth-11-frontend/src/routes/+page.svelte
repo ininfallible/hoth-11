@@ -15,6 +15,7 @@
 	appId: "1:948755546362:web:f8dfc62c92bf610bc6c943",
 	measurementId: "G-80GF47QQLX"
 	};
+	
 
 	const app = initializeApp(firebaseConfig);
 	const database = getFirestore(app);
@@ -61,7 +62,12 @@
 			// res.status(500).json({ success: false, message: 'Internal server error' });
 		}
     }
+
+	function togglePage() { currentPage = currentPage === 1 ? 2 : 1; }
+
 </script>
+
+
 
 <h2>What’s your major (type the full major name out in all lowercase ie. computer science)?</h2>
 <input bind:value = {$major} />
@@ -130,7 +136,10 @@
 {/each}
 </form>
 
-<button on:click={onFormSubmit}>Submit</button>
+<nav>
+	<a href="/results"class = "button" on:click={onFormSubmit}>Submit</a>
+</nav>
+
 
 
 
@@ -147,4 +156,19 @@
     h2{
         font-family: 'Arial';
     }
+
+	.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: #0056b3;
+  }
 </style>
