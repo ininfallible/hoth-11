@@ -66,6 +66,12 @@
 
 <div style:background-color = {$background}>
 <div style:height="100vh">
+<div style:line-height="40px">
+
+	<h1>
+		Major Mangler
+	</h1>
+	<br>
 
 <h2>What’s your major (type the full major name out in all lowercase ie. computer science)?</h2>
 <input bind:value = {$major} />
@@ -138,7 +144,7 @@
 <nav>
 	<a href="/results"class = "button" on:click={onFormSubmit}>Submit</a>
 </nav>
-</div></div>
+</div></div></div>
 
 
 
@@ -169,14 +175,14 @@
   	}
 	
     label{
-        font-family: 'Arial';
+        font-family: 'Comic Sans MS', 'Comic Sans';
     }
 
     h1{
-        font-family: 'Arial';
+        font-family: 'Comic Sans MS', 'Comic Sans';
     }
     h2{
-        font-family: 'Serif';
+        font-family: 'Comic Sans MS', 'Comic Sans';
 		color: #263A68;
     }
 
@@ -194,4 +200,5 @@
   .button:hover {
     background-color: #0056b3;
   }
+
 </style>
