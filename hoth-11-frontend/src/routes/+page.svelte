@@ -2,6 +2,7 @@
 	// import { database } from "$lib/database.js";
     import { major, formData } from './stores.js';
 	import { get } from "svelte/store";
+	import { background } from './stores.js';
 
 	import { initializeApp } from "firebase/app";
 	import { collection, getFirestore, doc, setDoc } from "firebase/firestore";
@@ -69,9 +70,13 @@
 
 
 
+<div style:background-color = {$background}>
+<div style:height="100vh">
+
 <h2>What’s your major (type the full major name out in all lowercase ie. computer science)?</h2>
 <input bind:value = {$major} />
 
+<br><br>
 <h2>Are you more introverted or extroverted?</h2>
 
 <form method="POST">
@@ -88,6 +93,7 @@
 {/each}
 </form>
 
+<br>
 <h2>Do you tend to focus more on what’s in front of you or on what the future might hold?</h2>
 
 <form method="POST">
@@ -104,6 +110,7 @@
 {/each}
 </form>
 
+<br>
 <h2>Are you more guided by your feelings or by logic?</h2>
 
 <form method="POST">
@@ -120,6 +127,7 @@
 {/each}
 </form>
 
+<br>
 <h2>Do you prefer planning things out or just going with the flow?</h2>
 
 <form method="POST">
@@ -139,7 +147,7 @@
 <nav>
 	<a href="/results"class = "button" on:click={onFormSubmit}>Submit</a>
 </nav>
-
+</div></div>
 
 
 
@@ -147,14 +155,38 @@
 
 
 <style>
+   /* body {
+		background: #DED8CC;
+	} */
+	* {
+        margin: 0;
+        padding: 0;
+		line-height: 30px;
+        /* border: 0; */
+        /* outline: 0; */
+        /* font-size: 100%; */
+        /* vertical-align: baseline; */
+        /* background: transparent; */
+    }
+	:global(body) {
+    color: #425B88;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+	height: 100vh;
+  	}
+	
     label{
         font-family: 'Arial';
     }
+
     h1{
         font-family: 'Arial';
     }
     h2{
-        font-family: 'Arial';
+        font-family: 'Serif';
+		color: #263A68;
     }
 
 	.button {

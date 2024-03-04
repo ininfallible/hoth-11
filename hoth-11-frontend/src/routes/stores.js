@@ -23,3 +23,4 @@ export const major = writable('');
 
 export const formData = writable({a: 'b'}, () => {});
 
+export const background = writable('#DED8CC');
