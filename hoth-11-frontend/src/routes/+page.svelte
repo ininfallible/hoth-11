@@ -201,7 +201,7 @@
 </form>
 
 <br>
-<h2>How  often are you in your dorm (percentage)?</h2>
+<h2>How  often are you in your dorm (percentage of the time)?</h2>
 
 <form method="POST">
 {#each ['Less than 10%', '10-30%', '30-50%', '50-70%', '70-90%', 'Over 90%'] as opt}
