@@ -352,11 +352,13 @@
 	</label>
 {/each}
 </form>
+<br>
+
 
 <nav>
 	<a href="/results"class = "button" on:click={onFormSubmit}>Submit</a>
 </nav>
-</div></div></div>
+</div></div> </div>
 
 
 
@@ -378,8 +380,10 @@
         /* background: transparent; */
     }
 	:global(body) {
+	font-family: 'Comic Sans MS', 'Comic Sans';
+	background-image: url("./rainbow.jpg");
 	border: 40px solid #DED8CC;
-    color: #425B88;
+    color: black;
 	margin: 0;
 	padding: 0;
 	text-align: center;
