@@ -25,6 +25,17 @@
     var mbti2 = "";
     var mbti3 = "";
     var mbti4 = "";
+	var diff = 0;
+	var like = 0;
+	var dorm = "";
+	var soc = "";
+	var intr = "";
+	var pet = "";
+	var music = "";
+	var dirt = "";
+	var food = "";
+	var caf = "";
+	var typ = "";
 
 	const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
 
@@ -43,7 +54,18 @@
                 mbti1: mbti1,
                 mbti2: mbti2,
                 mbti3: mbti3,
-                mbti4: mbti4
+                mbti4: mbti4,
+				diff: diff,
+				like: like,
+				dorm: dorm,
+				soc: soc,
+				intr: intr,
+				pet: pet,
+				music: music,
+				dirt: dirt,
+				food: food,
+				caf: caf,
+				typ: typ
             }
         });
 
@@ -97,14 +119,15 @@
 <h2>Do you tend to focus more on what’s in front of you or on what the future might hold?</h2>
 
 <form method="POST">
-{#each ['what’s right in front of me', 'what the future might hold'] as mbti2}
+{#each ['what’s right in front of me', 'what the future might hold'] as opt}
 	<label>
 		<input
 			type="radio"
 			name="mbti2"
-			bind:value={mbti2}
+			bind:group={mbti2}
+			value = {opt}
 		/>
-		{mbti2}
+		{opt}
 	</label>
 {/each}
 </form>
@@ -113,14 +136,15 @@
 <h2>Are you more guided by your feelings or by logic?</h2>
 
 <form method="POST">
-{#each ['feelings', 'logic'] as mbti3}
+{#each ['feelings', 'logic'] as opt}
 	<label>
 		<input
 			type="radio"
 			name="mbti3"
-			bind:value={mbti3}
+			bind:group={mbti3}
+			value={opt}
 		/>
-		{mbti3}
+		{opt}
 	</label>
 {/each}
 </form>
@@ -129,14 +153,191 @@
 <h2>Do you prefer planning things out or just going with the flow?</h2>
 
 <form method="POST">
-{#each ['planning things out', 'just going with the flow'] as mbti4}
+{#each ['planning things out', 'just going with the flow'] as opt}
 	<label>
 		<input
 			type="radio"
 			name="mbti4"
-			bind:value={mbti4}
+			bind:group={mbti4}
+			value = {opt}
 		/>
-		{mbti4}
+		{opt}
+	</label>
+{/each}
+</form>
+
+<h2>On a scale from 1-5, how difficult do you think your major is?</h2>
+
+<form method="POST">
+{#each [1, 2, 3, 4, 5] as opt}
+	<label>
+		<input
+			type="radio"
+			name="diff"
+			bind:group={diff}
+			value = {opt}
+		/>
+		{opt}
+	</label>
+{/each}
+</form>
+
+<h2>On a scale from 1-5, how much do you like your major?</h2>
+
+<form method="POST">
+{#each [1, 2, 3, 4, 5] as opt}
+	<label>
+		<input
+			type="radio"
+			name="like"
+			bind:group={like}
+			value = {opt}
+		/>
+		{opt}
+	</label>
+{/each}
+</form>
+
+<h2>How  often are you in your dorm (percentage)?</h2>
+
+<form method="POST">
+{#each ['Less than 10%', '10-30%', '30-50%', '50-70%', '70-90%', 'Over 90%'] as opt}
+	<label>
+		<input
+			type="radio"
+			name="dorm"
+			bind:group={dorm}
+			value = {opt}
+		/>
+		{opt}
+	</label>
+{/each}
+</form>
+
+<h2>What is your most used social media app?</h2>
+
+<form method="POST">
+{#each ['Instagram', 'Twitter', 'Reddit', 'Snapchat', 'LinkedIn', 'Facebook', 'Tiktok'] as opt}
+	<label>
+		<input
+			type="radio"
+			name="soc"
+			bind:group={soc}
+			value = {opt}
+		/>
+		{opt}
+	</label>
+{/each}
+</form>
+
+<h2>On a scale from 1-5, how in tune with Internet culture would you say you are?</h2>
+
+<form method="POST">
+{#each [1, 2, 3, 4, 5] as opt}
+	<label>
+		<input
+			type="radio"
+			name="intr"
+			bind:group={intr}
+			value = {opt}
+		/>
+		{opt}
+	</label>
+{/each}
+</form>
+
+<h2>Are you more of a cat person or a dog person?</h2>
+
+<form method="POST">
+{#each ['Cat', 'Dog'] as opt}
+	<label>
+		<input
+			type="radio"
+			name="pet"
+			bind:group={pet}
+			value = {opt}
+		/>
+		{opt}
+	</label>
+{/each}
+</form>
+
+<h2>What is your favorite music genre?</h2>
+
+<form method="POST">
+{#each ['EDM', 'Pop', 'RnB', 'Rap', 'Alt/Indie', 'Country', 'OSTs', 'K-pop', 'Rock'] as opt}
+	<label>
+		<input
+			type="radio"
+			name="music"
+			bind:group={music}
+			value = {opt}
+		/>
+		{opt}
+	</label>
+{/each}
+</form>
+
+<h2>How often do you shower?</h2>
+
+<form method="POST">
+{#each ['More than 2 times a day', '1-2 times a day', 'Once every other day', '1-3 times a week', 'Once every other week', 'Once a month'] as opt}
+	<label>
+		<input
+			type="radio"
+			name="dirt"
+			bind:group={dirt}
+			value = {opt}
+		/>
+		{opt}
+	</label>
+{/each}
+</form>
+
+<h2>What is your favorite place to eat on the Hill?</h2>
+
+<form method="POST">
+{#each ['B Plate', 'De Neve', 'Epicuria', 'Rende', 'Feast', 'B Cafe', 'The Study', 'The Drey', 'Food trucks'] as opt}
+	<label>
+		<input
+			type="radio"
+			name="food"
+			bind:group={food}
+			value = {opt}
+		/>
+		{opt}
+	</label>
+{/each}
+</form>
+
+<h2>What is your favorite form of caffeine?</h2>
+
+<form method="POST">
+{#each ['Coffee', 'Tea', 'Energy drinks', 'None'] as opt}
+	<label>
+		<input
+			type="radio"
+			name="caf"
+			bind:group={caf}
+			value = {opt}
+		/>
+		{opt}
+	</label>
+{/each}
+</form>
+
+<h2>What is your typing speed?</h2>
+
+<form method="POST">
+{#each ['Less than 40 wpm', '40-60 wpm', '61-80wpm', '81-100 wpm', 'More than 100 wpm'] as opt}
+	<label>
+		<input
+			type="radio"
+			name="typ"
+			bind:group={typ}
+			value={opt}
+		/>
+		{opt}
 	</label>
 {/each}
 </form>
@@ -178,9 +379,12 @@
         font-family: 'Comic Sans MS', 'Comic Sans';
     }
 
+<<<<<<< Updated upstream
     h1{
         font-family: 'Comic Sans MS', 'Comic Sans';
     }
+=======
+>>>>>>> Stashed changes
     h2{
         font-family: 'Comic Sans MS', 'Comic Sans';
 		color: #263A68;
