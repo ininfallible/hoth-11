@@ -3,7 +3,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getDatabase, ref, set } from "firebase/database";
-
+export var database;
 
 
   if (typeof window !== 'undefined')
@@ -24,12 +24,14 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const database = getDatabase(app);
-
-function writeUserData(userId, data) {
+database = getDatabase(app);
+  }
+/*function writeUserData(userId, data) {
     const db = getDatabase();
     set(ref(db, 'users/' + userId), data);
   }
   }
+  **/
